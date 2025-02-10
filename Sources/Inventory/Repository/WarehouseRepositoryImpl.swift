@@ -49,7 +49,14 @@ struct WarehouseRepositoryImpl: WarehouseRepository{
     }
     
     func deleteAll() async throws -> Bool {
-        <#code#>
+        let deleteAll =  await db.deleteAll()
+        if(deleteAll){
+            print("deleted all warehouses")
+        }else{
+            print("Failed to delete all warehouses")
+
+        }
+        return deleteAll
     }
     
     

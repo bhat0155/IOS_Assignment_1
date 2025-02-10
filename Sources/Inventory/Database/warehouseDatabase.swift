@@ -44,4 +44,10 @@ actor ACMEInventoryDatabaseWarehouse{
         }
     }
     
+    // deleteAll
+    func deleteAll()->Bool{
+        warehouses.removeAll();
+        return warehouses.isEmpty
+    }
+        
 }
