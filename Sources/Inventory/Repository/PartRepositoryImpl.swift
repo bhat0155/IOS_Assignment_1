@@ -24,9 +24,12 @@ struct PartRepositoryImpl: PartRepository{
     }
     
     
-    
     func get(id: UUID) async throws -> Part? {
-        <#code#>
+        guard let part = await db.get(id: id) else{
+            print("id: \(id) does not exist")
+            return nil
+        }
+         return part
     }
     
     func list() async throws -> [Part] {

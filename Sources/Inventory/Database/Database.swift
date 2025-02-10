@@ -15,8 +15,16 @@ import Foundation
          parts[part.id] = part
     }
     
+     // update a part
      func update(part: Part){
          parts[part.id] = part
      }
+     
+     //get a part
+     func get(id: UUID)->Part?{
+         return parts[id] // return nill if the part does not exist in dictionary
+     }
+     
+     
     
 }
