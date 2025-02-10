@@ -24,4 +24,13 @@ actor ACMEInventoryDatabaseWarehouse{
         return warehouses[id]
     }
     
+    // getting all warehouses
+    
+    func list()->[Warehouse]{
+        return Array(warehouses.values)
+    }
+    
+    // updating warehouse by id
+    
+    
 }

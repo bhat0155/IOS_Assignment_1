@@ -24,11 +24,21 @@ struct WarehouseRepositoryImpl: WarehouseRepository{
     }
     
     func list() async throws -> [Warehouse] {
-        <#code#>
+        let warehouses = await db.list()
+        if (warehouses.isEmpty){
+            print("database is empty")
+        }
+        return warehouses
     }
     
     func update(id: UUID, name: String, location: Location, contact: String, manager: String?) async throws -> Warehouse? {
-        <#code#>
+        guard let existingWarehouse = await db.get(id: id) else{
+            print("warehouse with id \(id) not found in database")
+            return nil
+        }
+        let warehouse = Warehouse(id: UUID(), name: name, location: location, contact: contact, manager: manager ?? "Ekam" )
+        await db.update(warehouse: warehouse)
+        
     }
     
     func delete(id: UUID) async throws -> Bool {

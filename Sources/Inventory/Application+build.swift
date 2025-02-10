@@ -68,7 +68,7 @@ func buildRouter() -> Router<AppRequestContext> {
     
     router.addRoutes(
         WarehouseController(
-            repository: WarehouseRepositoryImpl(db: <#ACMEInventoryDatabase#>)
+            repository: WarehouseRepositoryImpl(db: <#ACMEInventoryDatabaseWarehouse#>)
         ).endpoints,
         atPath: "/warehouses"
     )
