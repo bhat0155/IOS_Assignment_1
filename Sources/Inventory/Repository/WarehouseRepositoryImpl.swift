@@ -8,7 +8,7 @@
 import Foundation
 
 struct WarehouseRepositoryImpl: WarehouseRepository{
-    let db: ACMEInventoryDatabase
+    let db: ACMEInventoryDatabaseWarehouse
     func create(name: String, location: Location, contact: String, manager: String?) async throws -> Warehouse? {
         let warehouse = Warehouse(id: UUID(), name: name, location: location, contact: contact, manager: manager ?? "Ekam" )
         await db.create(warehouse: warehouse)
@@ -16,7 +16,11 @@ struct WarehouseRepositoryImpl: WarehouseRepository{
     }
     
     func get(id: UUID) async throws -> Warehouse? {
-        <#code#>
+        guard let warehouse = await db.get(id: id) else{
+            print("warehouse with id \(id) does not exist");
+            return nil
+        }
+        return warehouse
     }
     
     func list() async throws -> [Warehouse] {

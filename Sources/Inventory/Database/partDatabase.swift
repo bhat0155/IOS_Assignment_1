@@ -45,16 +45,5 @@ import Foundation
          return parts.isEmpty
      }
      
-     
-     // creating an empty warehouse dictionary
-     var warehouses: [UUID: Warehouse] = [:]
-     
-     // creating a warehouse
-     func create(warehouse: Warehouse){
-         warehouses[warehouse.id] = warehouse
-     }
-     
-     
-     
-    
+
 }
