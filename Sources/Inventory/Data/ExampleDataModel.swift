@@ -49,7 +49,7 @@ struct Warehouse{
     let id: UUID
     let name: String
     let location: Location
-    let contactNumber: String
+    let contact: String
     let manager: String
     
 }

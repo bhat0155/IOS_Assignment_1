@@ -10,7 +10,9 @@ import Foundation
 struct WarehouseRepositoryImpl: WarehouseRepository{
     let db: ACMEInventoryDatabase
     func create(name: String, location: Location, contact: String, manager: String?) async throws -> Warehouse? {
-        <#code#>
+        let warehouse = Warehouse(id: UUID(), name: name, location: location, contact: contact, manager: manager ?? "Ekam" )
+        await db.create(warehouse: warehouse)
+        return warehouse
     }
     
     func get(id: UUID) async throws -> Warehouse? {
