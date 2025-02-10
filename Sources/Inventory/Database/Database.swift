@@ -12,7 +12,7 @@ import Foundation
     
     // creating a part
     func create(part: Part){
-        return parts[part.id] = part
+         parts[part.id] = part
     }
     
     
