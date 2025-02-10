@@ -18,6 +18,9 @@ struct PartRepositoryImpl: PartRepository{
     
     func update(id: UUID, name: String, category: PartCategory, size: Dimensions?, weight: Double?) async throws -> Part? {
         <#code#>
+        let part = Part(id: UUID(), name: name, category: category, size: size ?? Dimensions(height: 1, width: 1, length: 1), weight: weight ?? 1)
+        await db.update(part:part);
+        return part
     }
     
     

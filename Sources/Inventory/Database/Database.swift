@@ -15,5 +15,8 @@ import Foundation
          parts[part.id] = part
     }
     
+     func update(part: Part){
+         parts[part.id] = part
+     }
     
 }
