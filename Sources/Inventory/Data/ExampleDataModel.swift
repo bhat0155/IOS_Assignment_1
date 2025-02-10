@@ -35,7 +35,9 @@ struct Part{
     let size: Dimensions
     let weight: Double
     
+ 
 }
+
 
 // Warehouse data model
 

@@ -17,7 +17,7 @@ struct PartRepositoryImpl: PartRepository{
     }
     
     func update(id: UUID, name: String, category: PartCategory, size: Dimensions?, weight: Double?) async throws -> Part? {
-        <#code#>
+        
         // checking if the part already exists
         guard let existingPart = await db.get(id:id)else{
             print("the part with id \(id) does not exist in database");
