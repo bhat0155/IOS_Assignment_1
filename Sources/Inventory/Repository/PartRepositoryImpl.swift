@@ -42,7 +42,9 @@ struct PartRepositoryImpl: PartRepository{
     
     
     func delete(id: UUID) async throws -> Bool {
-        <#code#>
+        let partDeleted = await db.delete(id: id)
+        return partDeleted
+        
     }
     
     func deleteAll() async throws -> Bool {

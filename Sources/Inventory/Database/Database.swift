@@ -30,6 +30,15 @@ import Foundation
          return Array(parts.values); // return values in db in the form of array
      }
      
+     // delete by id
+     func delete(id: UUID)->Bool{
+         if let deleted = parts.removeValue(forKey: id){
+             return true
+         }else{
+             return false
+         }
+     }
+     
      
     
 }
