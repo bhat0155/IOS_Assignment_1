@@ -9,6 +9,7 @@ import Foundation
 
 struct WarehouseRepositoryImpl: WarehouseRepository{
     let db: ACMEInventoryDatabaseWarehouse
+    
     func create(name: String, location: Location, contact: String, manager: String?) async throws -> Warehouse? {
         let warehouse = Warehouse(id: UUID(), name: name, location: location, contact: contact, manager: manager ?? "Ekam" )
         await db.create(warehouse: warehouse)
@@ -38,6 +39,7 @@ struct WarehouseRepositoryImpl: WarehouseRepository{
         }
         let warehouse = Warehouse(id: UUID(), name: name, location: location, contact: contact, manager: manager ?? "Ekam" )
         await db.update(warehouse: warehouse)
+        return warehouse
         
     }
     

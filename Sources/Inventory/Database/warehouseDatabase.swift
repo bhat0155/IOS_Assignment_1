@@ -31,6 +31,8 @@ actor ACMEInventoryDatabaseWarehouse{
     }
     
     // updating warehouse by id
-    
+    func update(warehouse: Warehouse){
+        warehouses[warehouse.id] = warehouse
+    }
     
 }
