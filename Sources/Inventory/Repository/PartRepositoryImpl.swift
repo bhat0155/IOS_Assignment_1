@@ -48,7 +48,8 @@ struct PartRepositoryImpl: PartRepository{
     }
     
     func deleteAll() async throws -> Bool {
-        <#code#>
+        let deleteAll = await db.deleteAll()
+       return deleteAll
     }
     
     

@@ -30,7 +30,7 @@ import Foundation
          return Array(parts.values); // return values in db in the form of array
      }
      
-     // delete by id
+     // delete a part by id
      func delete(id: UUID)->Bool{
          if let deleted = parts.removeValue(forKey: id){
              return true
@@ -38,6 +38,13 @@ import Foundation
              return false
          }
      }
+     
+     // empty the parts dictionary
+     func deleteAll()->Bool{
+         parts.removeAll()
+         return parts.isEmpty
+     }
+     
      
      
     
