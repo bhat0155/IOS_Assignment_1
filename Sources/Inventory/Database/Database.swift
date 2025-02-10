@@ -25,6 +25,11 @@ import Foundation
          return parts[id] // return nill if the part does not exist in dictionary
      }
      
+     // list all items in the database
+     func list()->[Part]{
+         return Array(parts.values); // return values in db in the form of array
+     }
+     
      
     
 }

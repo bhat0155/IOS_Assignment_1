@@ -33,8 +33,13 @@ struct PartRepositoryImpl: PartRepository{
     }
     
     func list() async throws -> [Part] {
-        <#code#>
+       let parts = await db.list()
+        if(parts.isEmpty){
+            print("the database is empty")
+        }
+        return parts
     }
+    
     
     func delete(id: UUID) async throws -> Bool {
         <#code#>
