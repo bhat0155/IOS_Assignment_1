@@ -44,7 +44,8 @@ struct WarehouseRepositoryImpl: WarehouseRepository{
     }
     
     func delete(id: UUID) async throws -> Bool {
-        <#code#>
+        let deletedWarehouse = await db.delete(id: id)
+        return deletedWarehouse
     }
     
     func deleteAll() async throws -> Bool {

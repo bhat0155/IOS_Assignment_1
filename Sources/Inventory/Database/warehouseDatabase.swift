@@ -35,4 +35,13 @@ actor ACMEInventoryDatabaseWarehouse{
         warehouses[warehouse.id] = warehouse
     }
     
+    // delete by id
+    func delete(id: UUID)->Bool{
+        if let deletedWarehouse = warehouses.removeValue(forKey: id){
+            return true
+        }else{
+            return false
+        }
+    }
+    
 }
