@@ -16,6 +16,8 @@ struct ExampleDataModel {
 
 
 // Part data model
+
+// enum can have 4 cases here
 enum Category: String, Codable, Equatable{
     case engine, transmission, brakes, body
 }
@@ -51,7 +53,6 @@ struct Warehouse{
     let manager: String
     
 }
-
 
 
 // Every data model you create MUST contain this line (DON'T forget to change the object name)
