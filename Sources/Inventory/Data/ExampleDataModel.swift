@@ -18,11 +18,11 @@ struct ExampleDataModel {
 // Part data model
 
 // enum can have 4 cases here
-enum Category: String, Codable, Equatable{
+enum PartCategory: String, Codable, Equatable{
     case engine, transmission, brakes, body
 }
 
-struct Size: Codable, Equatable{
+struct Dimensions: Codable, Equatable{
     let height: Double
     let width: Double
     let length: Double
@@ -31,8 +31,8 @@ struct Size: Codable, Equatable{
 struct Part{
     let id: UUID
     let name: String
-    let category: Category
-    let size: Size
+    let category: PartCategory
+    let size: Dimensions
     let weight: Double
     
 }

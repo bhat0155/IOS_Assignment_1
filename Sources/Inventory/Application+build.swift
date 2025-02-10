@@ -61,14 +61,14 @@ func buildRouter() -> Router<AppRequestContext> {
     
     router.addRoutes(
         PartController(
-            repository: PartRepositoryImpl()
+            repository: PartRepositoryImpl(db: <#ACMEInventoryDatabase#>)
         ).endpoints,
         atPath: "/parts"
     )
     
     router.addRoutes(
         WarehouseController(
-            repository: WarehouseRepositoryImpl()
+            repository: WarehouseRepositoryImpl(db: <#ACMEInventoryDatabase#>)
         ).endpoints,
         atPath: "/warehouses"
     )

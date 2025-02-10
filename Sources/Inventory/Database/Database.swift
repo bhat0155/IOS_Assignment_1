@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ACMEInventoryDatabase{
+ actor ACMEInventoryDatabase{
     var parts: [UUID: Part] = [:];
     
     // creating a part
