@@ -15,7 +15,11 @@ actor ACMEInventoryDatabaseWarehouse{
     
     // creating a warehouse
     func create(warehouse: Warehouse){
-        warehouses[warehouse.id] = warehouse
+        if let id = warehouse.id { // unwrapping
+            warehouses[id] = warehouse
+        }else{
+            print("Error: warehouse does not have valid id")
+        }
     }
     
     // getting a warehouse
@@ -32,7 +36,11 @@ actor ACMEInventoryDatabaseWarehouse{
     
     // updating warehouse by id
     func update(warehouse: Warehouse){
-        warehouses[warehouse.id] = warehouse
+        if let id = warehouse.id { // unwrapping
+            warehouses[id]=warehouse
+        }else{
+            print("Error: warehouse does not have valid id")
+        }
     }
     
     // delete by id

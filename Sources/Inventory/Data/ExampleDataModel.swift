@@ -29,11 +29,20 @@ struct Dimensions: Codable, Equatable{
 }
 
 struct Part{
-    let id: UUID
+    let id: UUID?
     let name: String
     let category: PartCategory
     let size: Dimensions
     let weight: Double
+    
+    
+    init(id: UUID? = nil, name: String, category: PartCategory, size: Dimensions, weight: Double) {
+        self.id = id ?? UUID() // generate a new id on initailisation since id is generated server side
+        self.name = name
+        self.category = category
+        self.size = size
+        self.weight = weight
+    }
     
  
 }
@@ -48,11 +57,20 @@ struct Location: Codable, Equatable{
 }
 
 struct Warehouse{
-    let id: UUID
+    let id: UUID?
     let name: String
     let location: Location
     let contact: String
     let manager: String
+    
+    init(id: UUID? = nil, name: String, location: Location, contact: String, manager: String){
+        self.id = id ?? UUID()// generate a new id on initailisation since id is generated server side
+        self.name = name
+        self.location = location
+        self.contact = contact
+        self.manager = manager
+        
+    }
     
 }
 

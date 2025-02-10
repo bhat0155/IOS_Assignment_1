@@ -12,12 +12,20 @@ import Foundation
     
     // creating a part
     func create(part: Part){
-         parts[part.id] = part
+        if let id = part.id { // unwrapping
+            parts[id] = part
+        }else{
+            print("Error: part does not have valid id")
+        }
     }
     
      // update a part
      func update(part: Part){
-         parts[part.id] = part
+         if let id = part.id { // unwrapping
+             parts[id]=part
+         }else{
+             print("Error: part does not have valid id")
+         }
      }
      
      //get a part
